@@ -1,0 +1,7 @@
+{
+  "type" : "anonymousPopulation",
+  "identifier" : "population_of_sgd_2_0_0",
+  "caption" : "Population of SGD 2.0.0",
+  "description" : "This population has been created automatically by xarf import.",
+  "size" : 500
+}

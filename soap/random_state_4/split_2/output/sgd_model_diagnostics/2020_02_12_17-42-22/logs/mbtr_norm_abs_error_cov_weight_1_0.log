@@ -1,0 +1,71 @@
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error' in collection.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_error' in collection.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'abs_sq_error' in collection.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error_bystd' in collection.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_sq_error_bystd' in collection.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.common.parameter.ParameterContainer lambda$pass$4
+WARNING: Parameter value of num_results could not be passed to container.
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.run.LegacyComputationSpecification build
+INFO: accepted parameter values:
+table=SGD 2.0.0
+targets=[norm_abs_error]
+modeling=Empirical distribution
+dev_measure=norm. neg. mean shift
+cov_func=coverage
+controls=Optional.empty
+cov_weight=1.0
+ctr_weight=1.0
+props=Statements about SGD 2.0.0
+descr_lang=Closed conjunctions
+attr_filter=[Ef, soap_predE, abs_error, sum_pred_Ef_and_abs_error, sum_Ef_and_normalized_error, error, sq_error]
+num_res=1
+oest=coverage and negative mean shift
+apx_fac=1.0
+max_depth=Optional[4]
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, id>=126.500], Sample(mean=0.10015, std=0.22393, med=0.04468, amd=0.09555), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 398.0,frequency: 0.796,norm. neg. mean shift: 0.10932591493064588,avg. med. dev. gain: 0.0]); value 0.08702342828479412
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, percent_atom_ga<0.234375, percent_atom_ga<=0.390625, percent_atom_ga<=0.609375], Sample(mean=0.07254, std=0.10311, med=0.04429, amd=0.05570), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 211.0,frequency: 0.422,norm. neg. mean shift: 0.35489249940568934,avg. med. dev. gain: 0.3725477244809813]); value 0.1497646347492009
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, percent_atom_ga<=0.390625, percent_atom_ga<=0.609375], Sample(mean=0.08639, std=0.18417, med=0.04703, amd=0.07571), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 325.0,frequency: 0.65,norm. neg. mean shift: 0.23173150671806356,avg. med. dev. gain: 0.14716805447130948]); value 0.1506254793667413
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, percent_atom_ga<=0.609375], Sample(mean=0.08673, std=0.17492, med=0.04509, amd=0.07528), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 428.0,frequency: 0.856,norm. neg. mean shift: 0.22866103836138815,avg. med. dev. gain: 0.1520661893386061]); value 0.19573384883734826
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_In_O>=0.884845, ecn_bond_dist_O_In>=0.399028, percent_atom_in>=0.0729167], Sample(mean=0.07587, std=0.13593, med=0.04459, amd=0.06050), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 373.0,frequency: 0.746,norm. neg. mean shift: 0.3252321822025706,avg. med. dev. gain: 0.3185384252823098]); value 0.24262320792311767
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, beta<90.3548, beta<=93.0589, beta<=98.8262], Sample(mean=0.07465, std=0.14439, med=0.04290, amd=0.06071), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 407.0,frequency: 0.814,norm. neg. mean shift: 0.3360912067207079,avg. med. dev. gain: 0.3161474570245276]); value 0.27357824227065625
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.89475, beta<90.3548, beta<=93.0589, beta<=98.8262, c>=4.05411], Sample(mean=0.06603, std=0.13084, med=0.04197, amd=0.05073), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 378.0,frequency: 0.756,norm. neg. mean shift: 0.41276178602091684,avg. med. dev. gain: 0.42850158306822267]); value 0.3120479102318131
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.89475, alpha>=60.9679, beta>=88.9399, gamma>=88.6772], Sample(mean=0.06639, std=0.12981, med=0.04197, amd=0.05120), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 387.0,frequency: 0.774,norm. neg. mean shift: 0.409524741373881,avg. med. dev. gain: 0.4232443982272475]); value 0.3169721498233839
+Feb 12, 2020 5:42:23 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.89475, alpha>=60.9679, beta<90.3548, beta<=93.0589, beta<=98.8262, beta>=88.9399, gamma>=88.6772], Sample(mean=0.06517, std=0.12990, med=0.04123, amd=0.04966), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 380.0,frequency: 0.76,norm. neg. mean shift: 0.4203964328765625,avg. med. dev. gain: 0.4406223964124676]); value 0.31950128898618746
+Feb 12, 2020 5:42:25 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 1988/10001(0.1987801219878012) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.31950128898618746 - 0.3806107729613711 (0.8394436303005387)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9399, ecn_bond_dist_Ga_O>=0.876602, percent_atom_in<=0.640625], Sample(mean=0.12741, std=0.42712, med=0.04889, amd=0.13811), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 376.0,frequency: 0.752,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 1328
+Feb 12, 2020 5:42:28 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 3871/20017(0.19338562222111205) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.31950128898618746 - 0.3528003936236006 (0.9056148880804832)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha<=119.998, vol_per_atom>=9.91460], Sample(mean=0.12549, std=0.44717, med=0.04265, amd=0.13977), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 336.0,frequency: 0.672,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 1270
+Feb 12, 2020 5:42:30 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 5332/30000(0.17773333333333333) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.31950128898618746 - 0.33401851174850705 (0.956537670064077)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9399, ecn_bond_dist_In_Al<=3.19300, id>=126.500], Sample(mean=0.09950, std=0.21511, med=0.04703, amd=0.09364), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 330.0,frequency: 0.66,norm. neg. mean shift: 0.11511011910742894,avg. med. dev. gain: 0.0])
+Size of boundary queue: 769
+Feb 12, 2020 5:42:32 PM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 6828/39804(0.17154054868857402) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.31950128898618746 - 0.3194688398015417 (1.0001015722994013)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9399, c>=4.05411, ecn_bond_dist_Al_In>=0.397169, ecn_bond_dist_Al_O>=0.887832, ecn_bond_dist_In_O>=0.884845], Sample(mean=0.07332, std=0.14862, med=0.04429, amd=0.05837), Sample(mean=0.11244, std=0.37224, med=0.04762, amd=0.08877)), [support: 297.0,frequency: 0.594,norm. neg. mean shift: 0.3479611736871828,avg. med. dev. gain: 0.34253340392290826])
+Size of boundary queue: 32
+Feb 12, 2020 5:42:32 PM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Start post-processing
+Feb 12, 2020 5:42:32 PM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Done post-processing

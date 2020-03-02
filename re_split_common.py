@@ -1,0 +1,78 @@
+import os, sys
+import pandas as pd
+import random
+import numpy as np
+import make_input_features as sgd
+import make_run_print as sgd
+
+
+root_path_dir = sgd._GLOB.root_path_dir
+
+def main(target, model=None, dataset=None, random_state=None):
+    
+    random.seed(random_state)
+    final_df = get_df(model)
+    n_splits = sgd._GLOB.n_splits 
+    split_total_df_and_write(model, n_splits, final_df, random_state)
+    
+def split_total_df_and_write(model, n_splits, final_df, random_state):
+
+    initial_list = final_df.id.tolist()
+    master_list = {i:[] for i in range(0, n_splits) }
+    for n_split in range(0, n_splits): 
+        idxs = random.sample(initial_list, 100)
+        master_list[n_split] = idxs
+        for i in idxs:
+            del initial_list[initial_list.index(i)]
+        
+    for n_split in master_list:
+        if not os.path.exists(model):
+            os.mkdir(model)
+        
+        tmp_dir = os.path.join(model,"random_state_"+str(random_state))
+        if not os.path.exists(tmp_dir):
+            os.mkdir(tmp_dir)
+        dirname = os.path.join(model,"random_state_"+str(random_state), "split"+"_"+str(n_split+1))
+        if not os.path.exists(dirname):
+            os.mkdir(dirname)
+        
+        idxs = master_list[n_split]
+
+        test_df = final_df[final_df.id.isin(idxs)]
+        train_df = final_df[~final_df.id.isin(idxs)]
+        train_df.to_csv(os.path.join(dirname, "train.csv"), index=False)
+        test_df.to_csv(os.path.join(dirname, "test.csv"), index=False)
+        
+        xarf_write_name = os.path.join(dirname, "xarf.txt") 
+        sgd.write_xarf_file(train_df, target, xarf_write_name, write_dir = ".")
+
+def get_df(model):
+    end_label = "_predE"
+    test_infile = os.path.join(root_path_dir,'data.csv')
+    df = pd.read_csv(test_infile)
+    label = model+end_label
+
+    keep_cols = [ i for i in df.columns.tolist() if end_label not in i and i != "Ef" ] 
+    
+    df = calc_sum_predE_abs_error(df, label)
+
+    #keep_cols = get_keep_ids()
+    keep_cols.extend( ["Ef", label, "abs_error", "error", "sq_error", "norm_abs_error", "sum_Ef_and_normalized_error", "sum_pred_Ef_and_abs_error"] )
+    final_df = df[keep_cols]
+
+    return final_df 
+
+def calc_sum_predE_abs_error(df, label):
+
+    df["error"] = df[label].values - df["Ef"].values
+    df["abs_error"] = abs(df[label].values - df["Ef"].values)
+    df["sq_error"] = (df[label].values - df["Ef"].values)**2
+    df["norm_abs_error"] = [ abs(i-j)/i if round(i - 0.00, 3) != 0.000 else 0.000  for i, j in zip(df["Ef"].tolist(),df[label].tolist()) ]
+    df["sum_pred_Ef_and_abs_error"] = df[label] + df["abs_error"]
+    if "sum_Ef_and_normalized_error" not in df.columns.tolist():
+        df["sum_Ef_and_normalized_error"] = df[label] + df["norm_abs_error"]
+
+    return df
+
+if __name__ == '__main__':
+    main()
