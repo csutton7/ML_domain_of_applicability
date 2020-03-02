@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>KDON documentation - realKD 0.7.2</title>
+<style>
+body {
+	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 14px;
+	width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: top;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+caption { 
+	padding-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 7px;
+    display: inline-block;
+ 
+    float: left;
+    background-color: #F8981D;
+	color: #253441;
+    font-weight: bold;
+    height: 14px;
+    float: left;
+}
+</style>
+</head>
+
+<body>
+  <h1>KDON documentation - realKD 0.7.2</h1>
+  <h2>subgroupDiscovery</h2>
+  <p>Computation specification for subgroup discovery task.</p>
+  <h3>supertypes</h3> 
+    	<a href="computation.html">computation</a>,  
+    	<a href="tobject.html">tobject</a> 
+  <h3>subtypes</h3> 
+    	<p>none</p>
+  <h3>fields</h3> 
+  <table>
+  	<tbody>
+  		<tr>
+  			<th>name</th>
+  			<th>type</th>
+  			<th>description</th>
+  		</tr>
+      		<tr>
+      			<td>apxFac</td>
+      			<td>
+      				<a >int</a>
+      			</td>
+      			<td>approximation factor for branch-and-bound search</td>
+      		</tr> 
+      		<tr>
+      			<td><i>attrFilter</i></td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="identifier.html">identifier</a>)
+      			</td>
+      			<td>Variables to ignore for subgroup discovery.</td>
+      		</tr> 
+      		<tr>
+      			<td>controls</td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="identifier.html">identifier</a>)
+      			</td>
+      			<td>Control variables.</td>
+      		</tr> 
+      		<tr>
+      			<td>deviationMeasure</td>
+      			<td>
+      				<a >de.unibonn.realkd.patterns.emm.ModelDeviationMeasure</a>
+      			</td>
+      			<td>objective function to measure the quality of a pattern</td>
+      		</tr> 
+      		<tr>
+      			<td>id</td>
+      			<td>
+      				<a href="identifier.html">identifier</a>
+      			</td>
+      			<td>id of the computation</td>
+      		</tr> 
+      		<tr>
+      			<td><i>maxDepth</i></td>
+      			<td>
+      				<a >int</a>
+      			</td>
+      			<td>maximum depth for branch-and-bound search</td>
+      		</tr> 
+      		<tr>
+      			<td>numRes</td>
+      			<td>
+      				<a >int</a>
+      			</td>
+      			<td>number of results to return</td>
+      		</tr> 
+      		<tr>
+      			<td>optimisticEstimator</td>
+      			<td>
+      				<a href="optimisticEstimator.html">optimisticEstimator</a>
+      			</td>
+      			<td>optimistic estimator of the deviation measure</td>
+      		</tr> 
+      		<tr>
+      			<td><i>positiveCategory</i></td>
+      			<td>
+      				<a >java.lang.Object</a>
+      			</td>
+      			<td>positive category for a bernoulli model if the target is categorical</td>
+      		</tr> 
+      		<tr>
+      			<td>targets</td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="identifier.html">identifier</a>)
+      			</td>
+      			<td>Target variables.</td>
+      		</tr> 
+  	</tbody>
+  </table>
+
+</body>
+</html>

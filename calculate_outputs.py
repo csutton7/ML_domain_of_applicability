@@ -1,6 +1,44 @@
 import os
 import json
 import numpy as np
+import math
+import glob
+import numpy as np
+import pandas as pd
+from copy import deepcopy
+import re_split_common as rsc
+import glob_variables 
+
+exchange_value = glob_variables._GLOB().exchange_value
+print(exchange_value)
+
+def get_all_values(rep, target, target_label, skip=None):
+
+
+    global_dict = {}
+    da_dict = {}
+    dirs = get_dirs_glob(rep)
+    for d in dirs:
+        
+        try: 
+
+            tmp_selectors, values, relations = get_selectors_from_subfolder(d)
+            selectors = [ rename(s) for s in tmp_selectors ]
+
+        except UnboundLocalError:
+            # throws an error if there are no sgd outputs in the subfolder
+            continue
+    
+
+        idx = int(d.split("/")[-2].strip("split_"))
+        if idx in skip:
+            continue
+        else:
+            global_df = rsc.get_df(rep)
+            global_dict[idx] = get_global_summary(global_df, rep, target, target_label, selectors, values, relations)
+            da_dict[idx] = get_subset_summary(d, rep, target, target_label, selectors, values, relations)
+
+        print_summary(da_dict, global_dict)
 
 
 def calc_r2(values1, values2):
@@ -62,13 +100,13 @@ def get_dirs_glob(rep):
 
 def get_global_summary(global_df, rep, target, target_label, selectors, values, relations):
      
-    global_df[target] = _GLOB.exchange_value*global_df[target].values
+    global_df[target] = global_df[target].values
     
     if target != target_label:
-        global_df[target_label] = _GLOB.exchange_value*global_df[target_label].values
+        global_df[target_label] = exchange_value*global_df[target_label].values
      
-    global_df[rep+"_predE"] = _GLOB.exchange_value*global_df[rep+"_predE"].values
-    global_df["Ef"] = _GLOB.exchange_value*global_df["Ef"].values    
+    global_df[rep+"_predE"] = exchange_value*global_df[rep+"_predE"].values
+    global_df["Ef"] = exchange_value*global_df["Ef"].values    
     
     for s, v, r in zip(selectors, values, relations):
         print(s, v, r)
@@ -95,10 +133,10 @@ def get_subset_summary(d, rep, target, target_label, selectors, values, relation
     for t in ["test", "train"]:
         in_df = pd.read_csv(os.path.join(d, t+".csv"))
         out_df = selector2df(deepcopy(in_df), selectors, values, relations)
-        pred_e_value = deepcopy(_GLOB.exchange_value*out_df[out_df["is_reliable"] == 1][rep+"_predE"].values)
-        e_value = deepcopy(_GLOB.exchange_value*out_df[out_df["is_reliable"] == 1]["Ef"].values)
-        target_e_value = deepcopy(_GLOB.exchange_value*out_df[out_df["is_reliable"] == 1][target_label].values)
-        all_target_e_value = deepcopy(_GLOB.exchange_value*out_df[target_label].values)
+        pred_e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1][rep+"_predE"].values)
+        e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1]["Ef"].values)
+        target_e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1][target_label].values)
+        all_target_e_value = deepcopy(exchange_value*out_df[target_label].values)
 
         #print("for model %s split %s, avg. rr vs. glob error --> %s vs. %s" %(rep, split, target, t, np.mean(df[target].values), np.mean(df[df["is_reliable"] == 1][target].values)))
         tmp_dict["DA"+"_"+t] = {"error": np.mean(target_e_value), 
@@ -114,29 +152,7 @@ def get_subset_summary(d, rep, target, target_label, selectors, values, relation
                                 }
     return tmp_dict
 
-def get_all_values(rep, target, target_label, skip=True):
-    
-    global_dict = {}
-    da_dict = {}
-    dirs = get_dirs_glob(rep)
-    for d in dirs:
-        print(d)
-        try: 
-            tmp_selectors, values, relations = co.get_selectors_from_subfolder(d)
-            selectors = [ rename(s) for s in tmp_selectors ]
 
-        except UnboundLocalError:
-            # throws an error if there are no sgd outputs in the subfolder
-            continue
-    
-        idx = d.split("/")[-2].strip("split_")
-        global_df = rsc.get_df(rep)
-        global_dict[idx] = get_global_summary(global_df, rep, target, target_label, selectors, values, relations)
-        da_dict[idx] = get_subset_summary(d, rep, target, target_label, selectors, values, relations)
-
-    print_summary(da_dict, global_dict)
-    
-    
 def print_summary(final_rep_dict, final_global_dict):
     
     root_strg = "Global"

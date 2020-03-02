@@ -1,0 +1,17 @@
+{
+  "type" : "productWorkScheme",
+  "id" : "octet_binaries_fdd",
+  "workspaces" : [ {
+    "type" : "workspaceFromXarf",
+    "id" : "binaries",
+    "datafile" : "octet_binaries_2.1.1.xarf"
+  } ],
+  "computations" : [ {
+    "type" : "functionalDependencyDiscovery",
+    "id" : "titanic_functional_pattern_discovery",
+    "target" : "sign_delta_e",
+    "num_res" : 3,
+    "alpha" : 1.0
+  } ],
+  "computationTimeLimit" : 3600
+}

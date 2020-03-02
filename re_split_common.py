@@ -2,20 +2,18 @@ import os, sys
 import pandas as pd
 import random
 import numpy as np
-import make_input_features as sgd
-import make_run_print as sgd
+import glob_variables 
 
+root_path_dir = glob_variables._GLOB.root_path_dir
+n_splits = glob_variables._GLOB.n_splits 
 
-root_path_dir = sgd._GLOB.root_path_dir
-
-def main(target, model=None, dataset=None, random_state=None):
+def gen_sgd_inputs(target, model=None, dataset=None, random_state=None):
     
     random.seed(random_state)
     final_df = get_df(model)
-    n_splits = sgd._GLOB.n_splits 
-    split_total_df_and_write(model, n_splits, final_df, random_state)
+    split_total_df_and_write(target, model, n_splits, final_df, random_state)
     
-def split_total_df_and_write(model, n_splits, final_df, random_state):
+def split_total_df_and_write(target, model, n_splits, final_df, random_state):
 
     initial_list = final_df.id.tolist()
     master_list = {i:[] for i in range(0, n_splits) }
@@ -44,7 +42,7 @@ def split_total_df_and_write(model, n_splits, final_df, random_state):
         test_df.to_csv(os.path.join(dirname, "test.csv"), index=False)
         
         xarf_write_name = os.path.join(dirname, "xarf.txt") 
-        sgd.write_xarf_file(train_df, target, xarf_write_name, write_dir = ".")
+        write_xarf_file(train_df, target, xarf_write_name, write_dir = ".")
 
 def get_df(model):
     end_label = "_predE"
@@ -73,6 +71,48 @@ def calc_sum_predE_abs_error(df, label):
         df["sum_Ef_and_normalized_error"] = df[label] + df["norm_abs_error"]
 
     return df
+
+def write_xarf_file(write_df, target, write_name, write_dir="."):
+    print("writing to dir", write_dir)
+    feature_list = get_feature_txt(write_df.columns.tolist(), write_name.strip('_xarf_file.txt'))
+
+    outFile2=write_name+'.tmp'
+    if os.path.isfile(outFile2):
+         os.remove(outFile2) 
+
+    write_df.to_csv(outFile2, header=None, sep=',', mode='a', index=False)
+
+    with open(outFile2) as f:
+        lines = f.readlines()
+    
+    content = [ line.strip() for line in lines ] 
+
+    feature_list.extend(content)
+    outFile3=os.path.join(write_dir, write_name)
+
+    with open(outFile3, 'w') as f:
+        f.write('\n'.join(feature_list))
+
+    os.remove(outFile2)
+
+
+def get_feature_txt(features, header_name):
+    
+    feature_list = []
+    header = ('@relation wpo_1_0_0 caption="WPO 1.0.0" description="generated from %s.csv"' %header_name)
+    feature_list.append( "%s" %header )
+
+    for i in features:
+        if i == "label":
+            name_type = "categoric"
+        else:
+            name_type = "numeric"
+        c = " ".join(["@attribute", i, name_type])
+        feature_list.append( "%s" %c )
+
+    feature_list.append( "%s" %"@data" )
+
+    return feature_list
 
 if __name__ == '__main__':
     main()

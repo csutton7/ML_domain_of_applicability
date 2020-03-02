@@ -1,0 +1,60 @@
+{
+  "type" : "patternCollection",
+  "id" : "$results_of_norm_abs_error_cov_weight_1_0",
+  "name" : "",
+  "description" : "",
+  "patterns" : [ {
+    "type" : "exceptionalSubgroupPattern",
+    "descriptor" : {
+      "type" : "subgroup",
+      "table" : "wpo_1_0_0",
+      "selector" : {
+        "type" : "attributeBasedConjunction",
+        "table" : "wpo_1_0_0",
+        "attributes" : [ "Natoms", "beta", "ecn_bond_dist_Al_O" ],
+        "constraints" : [ {
+          "type" : "greaterOrEquals",
+          "value" : 50.0
+        }, {
+          "type" : "lessOrEquals",
+          "value" : 98.826225635
+        }, {
+          "type" : "lessOrEquals",
+          "value" : 2.057704548
+        } ]
+      },
+      "reference" : "global",
+      "targetAttributes" : [ "norm_abs_error" ],
+      "targetModellingMethod" : [ "de.unibonn.realkd.patterns.models.mean.MetricEmpiricalDistributionFactory", "Empirical distribution" ],
+      "targetReferenceModel" : {
+        "type" : "metricEmpiricalDistribution",
+        "means" : [ 0.09881928465257314 ],
+        "covarianceMatrix" : [ [ 0.02915977508496121 ] ],
+        "medians" : [ 0.0496380882353 ],
+        "medianDeviations" : [ 0.07691150487365124 ]
+      },
+      "targetLocalModel" : {
+        "type" : "metricEmpiricalDistribution",
+        "means" : [ 0.044167530366712705 ],
+        "covarianceMatrix" : [ [ 0.0017778168455056494 ] ],
+        "medians" : [ 0.0319472852234 ],
+        "medianDeviations" : [ 0.030925946382711855 ]
+      }
+    },
+    "deviationMeasure" : "normalized_negative_mean_shift",
+    "measurements" : [ {
+      "measure" : "frequency",
+      "value" : 0.456,
+      "auxiliaryMeasurements" : [ {
+        "measure" : "support",
+        "value" : 228.0
+      } ]
+    }, {
+      "measure" : "normalized_negative_mean_shift",
+      "value" : 0.553047459086594
+    }, {
+      "measure" : "mean_absolute_median_deviation_reduction",
+      "value" : 0.597902206782764
+    } ]
+  } ]
+}

@@ -1,0 +1,317 @@
+realKD 0.7.2 (c) 2014-18 by the Contributors of the realKD project
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.KdonTypes <clinit>
+INFO: Loading KdonTypes
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.KdonTypes <clinit>
+INFO: Done loading KdonTypes
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string norm_abs_error_cov_weight_1.0 had to be altered to norm_abs_error_cov_weight_1_0
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.run.ProductWorkScheme <init>
+WARNING: Providing data path via job file is deprecated; provide via command line or other global option
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Parsing input file
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-Ga had to be altered to ecn_bond_dist_Al_Ga
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-In had to be altered to ecn_bond_dist_Al_In
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-O had to be altered to ecn_bond_dist_Al_O
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-Al had to be altered to ecn_bond_dist_Ga_Al
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-In had to be altered to ecn_bond_dist_Ga_In
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-O had to be altered to ecn_bond_dist_Ga_O
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Al had to be altered to ecn_bond_dist_In_Al
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Ga had to be altered to ecn_bond_dist_In_Ga
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-O had to be altered to ecn_bond_dist_In_O
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Al had to be altered to ecn_bond_dist_O_Al
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Ga had to be altered to ecn_bond_dist_O_Ga
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-In had to be altered to ecn_bond_dist_O_In
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Done parsing ARFF file
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.table.CSV csvStringListToListOfLists
+INFO: Done reading data (500 number of rows)
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.xarf.Xarf attributes
+INFO: Done creating attributes (35 attributes created)
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.xarf.Xarf derivedAttributes
+INFO: Done creating derived attributes (0 derived attributes created)
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.data.propositions.StandardPropositionalizationScheme apply
+INFO: Done compiling proposition list (280 propositions added)
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: population_of_wpo_1_0_0
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: wpo_1_0_0
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: statements_about_wpo_1_0_0
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'soap_predE' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_error' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'abs_sq_error' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error_bystd' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_sq_error_bystd' in collection.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.common.parameter.ParameterContainer lambda$pass$4
+WARNING: Parameter value of num_results could not be passed to container.
+Mar 02, 2020 8:18:35 AM de.unibonn.realkd.run.LegacyComputationSpecification build
+INFO: accepted parameter values:
+table=WPO 1.0.0
+targets=[norm_abs_error]
+modeling=Empirical distribution
+dev_measure=norm. neg. mean shift
+cov_func=coverage
+controls=Optional.empty
+cov_weight=1.0
+ctr_weight=1.0
+props=Statements about WPO 1.0.0
+descr_lang=Closed conjunctions
+attr_filter=[Ef, abs_error, sum_pred_Ef_and_abs_error, sum_Ef_and_normalized_error, error, sq_error]
+num_res=1
+oest=coverage and negative mean shift
+apx_fac=1.0
+max_depth=Optional[4]
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9526, gamma>=84.7500, gamma>=88.6772, id<117.000, id<235.000, id<=356.500, id<=478.000], Sample(mean=0.07557, std=0.09519, med=0.04964, amd=0.06019), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 99.0,frequency: 0.198,norm. neg. mean shift: 0.14915673831761628,avg. med. dev. gain: 0.10257247316636593]); value 0.029533034186888026
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, id<235.000, id<=356.500, id<=478.000], Sample(mean=0.07020, std=0.08356, med=0.04471, amd=0.05631), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 193.0,frequency: 0.386,norm. neg. mean shift: 0.2096083613464605,avg. med. dev. gain: 0.1603898805498257]); value 0.08090882747973376
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, id<=356.500, id<=478.000], Sample(mean=0.07634, std=0.09985, med=0.04476, amd=0.06293), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 297.0,frequency: 0.594,norm. neg. mean shift: 0.14042410638382394,avg. med. dev. gain: 0.06175332511041728]); value 0.08341191919199141
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, Natoms>=50.0000, alpha>=60.9679, b>=5.59494, beta>=88.9526, c>=4.05411, gamma>=84.7500, gamma>=88.6772], Sample(mean=0.06531, std=0.13156, med=0.03518, amd=0.05371), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 304.0,frequency: 0.608,norm. neg. mean shift: 0.2646955918721037,avg. med. dev. gain: 0.19915645423661316]); value 0.16093491985823902
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, mbtr_predE>=0.0799525], Sample(mean=0.06990, std=0.11576, med=0.04349, amd=0.05546), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 414.0,frequency: 0.828,norm. neg. mean shift: 0.2130150413875038,avg. med. dev. gain: 0.1730330297676354]); value 0.17637645426885312
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, c>=4.05411, mbtr_predE>=0.0799525], Sample(mean=0.06700, std=0.11633, med=0.03964, amd=0.05318), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 395.0,frequency: 0.79,norm. neg. mean shift: 0.24561905251046556,avg. med. dev. gain: 0.20705591791636485]); value 0.1940390514832678
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha>=60.9679, beta>=88.9526, gamma>=84.7500, mbtr_predE>=0.0799525], Sample(mean=0.06216, std=0.10872, med=0.03964, amd=0.04640), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 375.0,frequency: 0.75,norm. neg. mean shift: 0.300088213219981,avg. med. dev. gain: 0.3081970447369534]); value 0.22506615991498577
+Mar 02, 2020 8:18:36 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha>=60.9679, beta>=88.9526, c>=4.05411, gamma>=84.7500, mbtr_predE>=0.0799525], Sample(mean=0.05854, std=0.10875, med=0.03721, amd=0.04314), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 356.0,frequency: 0.712,norm. neg. mean shift: 0.34091117574354024,avg. med. dev. gain: 0.3567436218806542]); value 0.24272875712940065
+Mar 02, 2020 8:18:37 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha>=60.9679, beta>=88.9526, ecn_bond_dist_Al_O<=2.06905, gamma>=84.7500, mbtr_predE>=0.0799525], Sample(mean=0.05649, std=0.05515, med=0.03853, amd=0.04007), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 339.0,frequency: 0.678,norm. neg. mean shift: 0.3639378162860946,avg. med. dev. gain: 0.40247421506722175]); value 0.24674983944197218
+Mar 02, 2020 8:18:37 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha>=60.9679, beta>=88.9526, c>=4.05411, ecn_bond_dist_Al_O<=2.06905, gamma>=84.7500, mbtr_predE>=0.0799525], Sample(mean=0.05212, std=0.04974, med=0.03579, amd=0.03619), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 320.0,frequency: 0.64,norm. neg. mean shift: 0.41314443227560493,avg. med. dev. gain: 0.4604283187624195]); value 0.26441243665638714
+Mar 02, 2020 8:18:39 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 1217/10001(0.12168783121687832) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.33677071701369776 (0.7851408192525019)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9526, ecn_bond_dist_Ga_O>=0.876602, gamma>=84.7500, percent_atom_al<=0.677083], Sample(mean=0.08519, std=0.14066, med=0.04828, amd=0.07321), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 381.0,frequency: 0.762,norm. neg. mean shift: 0.0408560451870928,avg. med. dev. gain: 0.0])
+Size of boundary queue: 1804
+Mar 02, 2020 8:18:42 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 2401/20019(0.11993606074229482) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.31226968978146724 (0.8467438413296802)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9526, ecn_bond_dist_Ga_O>=0.876602, ecn_bond_dist_Ga_O>=1.87111, ecn_bond_dist_O_Ga>=0.373763, gamma>=84.7500, percent_atom_ga>=0.0885417], Sample(mean=0.08551, std=0.14536, med=0.04628, amd=0.07601), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 343.0,frequency: 0.686,norm. neg. mean shift: 0.03728479919785804,avg. med. dev. gain: 0.0])
+Size of boundary queue: 2108
+Mar 02, 2020 8:18:44 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 3568/30013(0.11888181787891913) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.2964161672720897 (0.8920310895649449)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, b>=5.59494, c<=9.35272], Sample(mean=0.09249, std=0.15140, med=0.04964, amd=0.08218), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 343.0,frequency: 0.686,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 1962
+Mar 02, 2020 8:18:47 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 4583/40001(0.11457213569660758) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.2830762211912548 (0.9340679889807564)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_In_O>=0.884845, ecn_bond_dist_O_In>=0.412304, ecn_bond_dist_O_In>=1.03763, percent_atom_ga<=0.609375, percent_atom_in>=0.0729167], Sample(mean=0.06763, std=0.12329, med=0.04471, amd=0.05163), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 302.0,frequency: 0.604,norm. neg. mean shift: 0.23848877935809368,avg. med. dev. gain: 0.2302485931579351])
+Size of boundary queue: 1433
+Mar 02, 2020 8:18:50 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 5855/50002(0.1170953161873525) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.27158168677885824 (0.9736018646636184)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha<=119.997, ecn_bond_dist_In_O<=2.07286], Sample(mean=0.09352, std=0.16011, med=0.04552, amd=0.08717), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 301.0,frequency: 0.602,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 736
+Mar 02, 2020 8:18:51 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 6604/57053(0.11575202005153103) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.26441243665638714 - 0.2643564244681299 (1.0002118813203422)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, alpha>=60.9679, beta<90.3548, beta<=92.6991, beta<=98.6788, beta>=88.9526, ecn_bond_dist_Al_Ga<=3.08826, gamma>=84.7500], Sample(mean=0.07774, std=0.11007, med=0.04828, amd=0.06148), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 303.0,frequency: 0.606,norm. neg. mean shift: 0.12468055091449134,avg. med. dev. gain: 0.08332339937167504])
+Size of boundary queue: 177
+Mar 02, 2020 8:18:51 AM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Start post-processing
+Mar 02, 2020 8:18:51 AM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Done post-processing
+Mar 02, 2020 8:18:51 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: $results_of_norm_abs_error_cov_weight_1_0
+realKD 0.7.2 (c) 2014-18 by the Contributors of the realKD project
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.KdonTypes <clinit>
+INFO: Loading KdonTypes
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.KdonTypes <clinit>
+INFO: Done loading KdonTypes
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string norm_abs_error_cov_weight_1.0 had to be altered to norm_abs_error_cov_weight_1_0
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.run.ProductWorkScheme <init>
+WARNING: Providing data path via job file is deprecated; provide via command line or other global option
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Parsing input file
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-Ga had to be altered to ecn_bond_dist_Al_Ga
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-In had to be altered to ecn_bond_dist_Al_In
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-O had to be altered to ecn_bond_dist_Al_O
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-Al had to be altered to ecn_bond_dist_Ga_Al
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-In had to be altered to ecn_bond_dist_Ga_In
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-O had to be altered to ecn_bond_dist_Ga_O
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Al had to be altered to ecn_bond_dist_In_Al
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Ga had to be altered to ecn_bond_dist_In_Ga
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-O had to be altered to ecn_bond_dist_In_O
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Al had to be altered to ecn_bond_dist_O_Al
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Ga had to be altered to ecn_bond_dist_O_Ga
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-In had to be altered to ecn_bond_dist_O_In
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Done parsing ARFF file
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.table.CSV csvStringListToListOfLists
+INFO: Done reading data (500 number of rows)
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.xarf.Xarf attributes
+INFO: Done creating attributes (35 attributes created)
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.xarf.Xarf derivedAttributes
+INFO: Done creating derived attributes (0 derived attributes created)
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.data.propositions.StandardPropositionalizationScheme apply
+INFO: Done compiling proposition list (280 propositions added)
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: population_of_wpo_1_0_0
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: wpo_1_0_0
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: statements_about_wpo_1_0_0
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'soap_predE' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'ngram_predE' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_error' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'abs_sq_error' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_abs_error_bystd' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.DefaultSubCollectionParameter$JsonStringToCollectionParser findByString
+WARNING: Could not find element 'norm_sq_error_bystd' in collection.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.common.parameter.ParameterContainer lambda$pass$4
+WARNING: Parameter value of num_results could not be passed to container.
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.run.LegacyComputationSpecification build
+INFO: accepted parameter values:
+table=WPO 1.0.0
+targets=[norm_abs_error]
+modeling=Empirical distribution
+dev_measure=norm. neg. mean shift
+cov_func=coverage
+controls=Optional.empty
+cov_weight=1.0
+ctr_weight=1.0
+props=Statements about WPO 1.0.0
+descr_lang=Closed conjunctions
+attr_filter=[Ef, mbtr_predE, abs_error, sum_pred_Ef_and_abs_error, sum_Ef_and_normalized_error, error, sq_error]
+num_res=1
+oest=coverage and negative mean shift
+apx_fac=1.0
+max_depth=Optional[4]
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9526, gamma>=84.7500, gamma>=88.6772, id<117.000, id<235.000, id<=356.500, id<=478.000], Sample(mean=0.07557, std=0.09519, med=0.04964, amd=0.06019), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 99.0,frequency: 0.198,norm. neg. mean shift: 0.14915673831761628,avg. med. dev. gain: 0.10257247316636593]); value 0.029533034186888026
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, id<235.000, id<=356.500, id<=478.000], Sample(mean=0.07020, std=0.08356, med=0.04471, amd=0.05631), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 193.0,frequency: 0.386,norm. neg. mean shift: 0.2096083613464605,avg. med. dev. gain: 0.1603898805498257]); value 0.08090882747973376
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, id<=356.500, id<=478.000], Sample(mean=0.07634, std=0.09985, med=0.04476, amd=0.06293), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 297.0,frequency: 0.594,norm. neg. mean shift: 0.14042410638382394,avg. med. dev. gain: 0.06175332511041728]); value 0.08341191919199141
+Mar 02, 2020 9:06:59 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, Natoms>=50.0000, alpha>=60.9679, b>=5.59494, beta>=88.9526, c>=4.05411, gamma>=84.7500, gamma>=88.6772], Sample(mean=0.06531, std=0.13156, med=0.03518, amd=0.05371), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 304.0,frequency: 0.608,norm. neg. mean shift: 0.2646955918721037,avg. med. dev. gain: 0.19915645423661316]); value 0.16093491985823902
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, beta<90.3548, beta<=92.6991, beta<=98.6788, c>=4.05411], Sample(mean=0.06931, std=0.13072, med=0.03853, amd=0.05683), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 382.0,frequency: 0.764,norm. neg. mean shift: 0.2196145775183323,avg. med. dev. gain: 0.15266699896483418]); value 0.16778553722400588
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, beta<=98.6788, ecn_bond_dist_In_O>=0.884845], Sample(mean=0.06617, std=0.11652, med=0.04349, amd=0.05032), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 331.0,frequency: 0.662,norm. neg. mean shift: 0.2550201510077653,avg. med. dev. gain: 0.2497357923652631]); value 0.16882333996714063
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, c>=4.05411, ecn_bond_dist_In_O>=0.884845], Sample(mean=0.06569, std=0.11567, med=0.04294, amd=0.04975), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 331.0,frequency: 0.662,norm. neg. mean shift: 0.26037185126159557,avg. med. dev. gain: 0.25821461806468476]); value 0.17236616553517628
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, beta<=98.6788, c>=4.05411, ecn_bond_dist_In_O>=0.884845], Sample(mean=0.06441, std=0.11631, med=0.04278, amd=0.04870), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 323.0,frequency: 0.646,norm. neg. mean shift: 0.27485136389600684,avg. med. dev. gain: 0.27390844058410463]); value 0.1775539810768204
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, beta<=92.6991, beta<=98.6788, c>=4.05411, ecn_bond_dist_In_O>=0.884845], Sample(mean=0.06371, std=0.11619, med=0.04227, amd=0.04779), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 320.0,frequency: 0.64,norm. neg. mean shift: 0.2826922593900675,avg. med. dev. gain: 0.2873652308497322]); value 0.18092304600964318
+Mar 02, 2020 9:07:00 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, b>=5.59494, beta<90.3548, beta<=92.6991, beta<=98.6788, c>=4.05411], Sample(mean=0.05948, std=0.11551, med=0.03542, amd=0.04550), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 316.0,frequency: 0.632,norm. neg. mean shift: 0.33024986062292644,avg. med. dev. gain: 0.3215982988715985]); value 0.20871791191368952
+Mar 02, 2020 9:07:02 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 566/10003(0.05658302509247226) nodes discarded/created (3/4 best solution depth/max depth)
+kth-best found - potential left: 0.20871791191368952 - 0.3329849827070706 (0.6268087834378412)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, a>=9.86508, c>=4.05411, gamma>=84.7500], Sample(mean=0.08726, std=0.14865, med=0.04899, amd=0.07471), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 384.0,frequency: 0.768,norm. neg. mean shift: 0.01747958374915831,avg. med. dev. gain: 0.0])
+Size of boundary queue: 2433
+Mar 02, 2020 9:07:02 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, b>=5.59494, beta<90.3548, beta<=92.6991, beta<=98.6788], Sample(mean=0.05937, std=0.11498, med=0.03579, amd=0.04520), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 319.0,frequency: 0.638,norm. neg. mean shift: 0.3315266856012538,avg. med. dev. gain: 0.32599953744657967]); value 0.21151402541359993
+Mar 02, 2020 9:07:03 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound updateResults
+INFO: Best solution updated: ExceptionalPattern(Subgroup([Natoms<=80.0000, a_c<=3.88836, b>=5.59494, beta<90.3548, beta<=92.6991, beta<=98.6788, ecn_bond_dist_Al_O<=2.06905], Sample(mean=0.05250, std=0.05337, med=0.03445, amd=0.03758), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 279.0,frequency: 0.558,norm. neg. mean shift: 0.40891667468471843,avg. med. dev. gain: 0.4397357237178141]); value 0.2281755044740729
+Mar 02, 2020 9:07:04 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 1337/20015(0.0667999000749438) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.3090992333717309 (0.738194986720213)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_Al_O<=2.06905, ecn_bond_dist_Ga_O<=2.07250, ecn_bond_dist_Ga_O>=0.876602, ecn_bond_dist_O_Ga>=0.373763, percent_atom_ga>=0.0885417], Sample(mean=0.08425, std=0.11739, med=0.04488, amd=0.07481), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 337.0,frequency: 0.674,norm. neg. mean shift: 0.05140108596451884,avg. med. dev. gain: 0.0])
+Size of boundary queue: 3204
+Mar 02, 2020 9:07:07 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 2144/30008(0.07144761396960811) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.2926390925578991 (0.7797164161480853)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_Al_Ga>=0.660799, ecn_bond_dist_Al_O>=0.887832, ecn_bond_dist_Ga_O>=0.876602, ecn_bond_dist_O_Al>=0.358355, percent_atom_al>=0.109375, percent_atom_in<=0.640625, vol_per_atom<=12.7374], Sample(mean=0.08939, std=0.16161, med=0.04524, amd=0.08207), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 320.0,frequency: 0.64,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 3472
+Mar 02, 2020 9:07:09 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 2767/40001(0.0691732706682333) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.27807098961693555 (0.8205656576703756)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, gamma<=90.9611, gamma<=98.5104, percent_atom_in<=0.390625, percent_atom_in<=0.640625, vol_per_atom<=12.7374], Sample(mean=0.08784, std=0.16107, med=0.04227, amd=0.08196), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 296.0,frequency: 0.592,norm. neg. mean shift: 0.010954259698313165,avg. med. dev. gain: 0.0])
+Size of boundary queue: 3313
+Mar 02, 2020 9:07:11 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 3510/50011(0.07018455939693267) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.2667658155474615 (0.8553401192195751)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_Al_Ga>=0.660799, ecn_bond_dist_Al_O>=0.887832, ecn_bond_dist_Ga_O>=0.876602, gamma<=98.5104, percent_atom_al<=0.677083], Sample(mean=0.07427, std=0.13547, med=0.04455, amd=0.06242), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 282.0,frequency: 0.564,norm. neg. mean shift: 0.16373261898919825,avg. med. dev. gain: 0.06935479522530746])
+Size of boundary queue: 3020
+Mar 02, 2020 9:07:14 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 4299/60003(0.07164641767911605) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.25632698932866715 (0.89017354384599)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta<=92.6991, beta<=98.6788, ecn_bond_dist_Al_Ga>=0.660799, ecn_bond_dist_Al_O>=0.887832, ecn_bond_dist_Ga_O>=0.876602, percent_atom_ga<=0.609375], Sample(mean=0.08186, std=0.16024, med=0.04223, amd=0.07376), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 270.0,frequency: 0.54,norm. neg. mean shift: 0.0782769675828177,avg. med. dev. gain: 0.0])
+Size of boundary queue: 2610
+Mar 02, 2020 9:07:16 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 5016/70000(0.07165714285714286) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.24589633974316216 (0.9279337167539842)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, ecn_bond_dist_Al_O>=0.887832, ecn_bond_dist_Al_O>=1.89300, ecn_bond_dist_O_Al>=0.358355, percent_atom_al>=0.109375, percent_atom_ga<=0.609375], Sample(mean=0.07210, std=0.13472, med=0.04294, amd=0.05990), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 258.0,frequency: 0.516,norm. neg. mean shift: 0.1881670389591225,avg. med. dev. gain: 0.10691256024742835])
+Size of boundary queue: 1929
+Mar 02, 2020 9:07:18 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 5767/80012(0.0720766884967255) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.2367454399003839 (0.9638010538664779)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, a>=9.86508, b<=9.75544, beta>=88.9526, c<=9.35272, ecn_bond_dist_Al_O>=0.887832, gamma>=84.7500], Sample(mean=0.09069, std=0.16659, med=0.04964, amd=0.07981), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 273.0,frequency: 0.546,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 1183
+Mar 02, 2020 9:07:20 AM de.unibonn.realkd.algorithms.branchbound.BestFirstBranchAndBound logStats
+INFO: 6420/89244(0.07193760925104209) nodes discarded/created (4/4 best solution depth/max depth)
+kth-best found - potential left: 0.2281755044740729 - 0.22816968100892748 (1.000025522519555)  
+ExceptionalPattern(Subgroup([Natoms<=80.0000, beta>=88.9526, ecn_bond_dist_Ga_In<=3.17801, gamma>=84.7500, percent_atom_in<=0.640625, vol_per_atom<=12.7374], Sample(mean=0.10223, std=0.14474, med=0.05321, amd=0.09255), Sample(mean=0.08882, std=0.14457, med=0.04810, amd=0.06707)), [support: 274.0,frequency: 0.548,norm. neg. mean shift: 0.0,avg. med. dev. gain: 0.0])
+Size of boundary queue: 375
+Mar 02, 2020 9:07:20 AM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Start post-processing
+Mar 02, 2020 9:07:20 AM de.unibonn.realkd.algorithms.emm.ExceptionalSubgroupBestFirstBranchAndBound concreteCall
+INFO: Done post-processing
+Mar 02, 2020 9:07:20 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: $results_of_norm_abs_error_cov_weight_1_0

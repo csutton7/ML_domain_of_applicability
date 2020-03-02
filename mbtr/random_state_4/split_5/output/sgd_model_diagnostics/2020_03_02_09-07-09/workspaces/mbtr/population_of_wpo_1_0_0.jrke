@@ -1,0 +1,7 @@
+{
+  "type" : "anonymousPopulation",
+  "identifier" : "population_of_wpo_1_0_0",
+  "caption" : "Population of WPO 1.0.0",
+  "description" : "This population has been created automatically by xarf import.",
+  "size" : 500
+}

@@ -1,0 +1,50 @@
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Parsing input file
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-Ga had to be altered to ecn_bond_dist_Al_Ga
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-In had to be altered to ecn_bond_dist_Al_In
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Al-O had to be altered to ecn_bond_dist_Al_O
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-Al had to be altered to ecn_bond_dist_Ga_Al
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-In had to be altered to ecn_bond_dist_Ga_In
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_Ga-O had to be altered to ecn_bond_dist_Ga_O
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Al had to be altered to ecn_bond_dist_In_Al
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-Ga had to be altered to ecn_bond_dist_In_Ga
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_In-O had to be altered to ecn_bond_dist_In_O
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Al had to be altered to ecn_bond_dist_O_Al
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-Ga had to be altered to ecn_bond_dist_O_Ga
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.base.Identifier identifier
+WARNING: Invalid identifier string ecn_bond_dist_O-In had to be altered to ecn_bond_dist_O_In
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.xarf.XarfParsing parse
+INFO: Done parsing ARFF file
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.table.CSV csvStringListToListOfLists
+INFO: Done reading data (500 number of rows)
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.xarf.Xarf attributes
+INFO: Done creating attributes (35 attributes created)
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.xarf.Xarf derivedAttributes
+INFO: Done creating derived attributes (0 derived attributes created)
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.util.Lists kMeansCutPoints
+WARNING: k-means search might not have converged; maximum number of iterations reached
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.data.propositions.StandardPropositionalizationScheme apply
+INFO: Done compiling proposition list (280 propositions added)
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: population_of_wpo_1_0_0
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: wpo_1_0_0
+Mar 02, 2020 9:06:33 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: statements_about_wpo_1_0_0
+Mar 02, 2020 9:06:49 AM de.unibonn.realkd.common.workspace.Workspaces$WorkspaceWithFileBackups storeInFile
+INFO: writing backup: $results_of_norm_abs_error_cov_weight_1_0

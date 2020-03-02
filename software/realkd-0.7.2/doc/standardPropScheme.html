@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>KDON documentation - realKD 0.7.2</title>
+<style>
+body {
+	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 14px;
+	width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: top;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+caption { 
+	padding-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 7px;
+    display: inline-block;
+ 
+    float: left;
+    background-color: #F8981D;
+	color: #253441;
+    font-weight: bold;
+    height: 14px;
+    float: left;
+}
+</style>
+</head>
+
+<body>
+  <h1>KDON documentation - realKD 0.7.2</h1>
+  <h2>standardPropScheme</h2>
+  <p>Propositionalizes table by applying a set of propositionalization rules to each attribute separately.</p>
+  <h3>supertypes</h3> 
+    	<a href="propositionalizationScheme.html">propositionalizationScheme</a>,  
+    	<a href="tobject.html">tobject</a> 
+  <h3>subtypes</h3> 
+    	<p>none</p>
+  <h3>fields</h3> 
+  <table>
+  	<tbody>
+  		<tr>
+  			<th>name</th>
+  			<th>type</th>
+  			<th>description</th>
+  		</tr>
+      		<tr>
+      			<td><i>additionalRules</i></td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="propRule.html">propRule</a>)
+      			</td>
+      			<td>Additional rules that are applied after the default rules.</td>
+      		</tr> 
+      		<tr>
+      			<td><i>defaultCategoricRule</i></td>
+      			<td>
+      				<a href="propRule.html">propRule</a>
+      			</td>
+      			<td>Third rule to be applied (default creates equality proposition for all values of categoric attribute.)</td>
+      		</tr> 
+      		<tr>
+      			<td><i>defaultMetricRule</i></td>
+      			<td>
+      				<a href="propRule.html">propRule</a>
+      			</td>
+      			<td>First rule to be applied (default finds four cut off points by k-means clustering for metric attributes).</td>
+      		</tr> 
+      		<tr>
+      			<td><i>defaultOrdinalRule</i></td>
+      			<td>
+      				<a href="propRule.html">propRule</a>
+      			</td>
+      			<td>Second rule to be applied (default creates count-based inequality conditions for ordinal attributes that are not metric).</td>
+      		</tr> 
+      		<tr>
+      			<td><i>specialRules</i></td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="propRule.html">propRule</a>)
+      			</td>
+      			<td>Exclusive rules that are applied first to attribute and, when firing, prevent further rules from being applied.</td>
+      		</tr> 
+  	</tbody>
+  </table>
+
+</body>
+</html>

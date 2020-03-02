@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>KDON documentation - realKD 0.7.2</title>
+<style>
+body {
+	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 14px;
+	width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: top;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+caption { 
+	padding-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 7px;
+    display: inline-block;
+ 
+    float: left;
+    background-color: #F8981D;
+	color: #253441;
+    font-weight: bold;
+    height: 14px;
+    float: left;
+}
+</style>
+</head>
+
+<body>
+  <h1>KDON documentation - realKD 0.7.2</h1>
+  <h2>workspaceFromXarf</h2>
+  <p>Provides a workspace with a table generated from a single xarf file along with a matching propositional context generated according to some propositionalization scheme.</p>
+  <h3>supertypes</h3> 
+    	<a href="workspace.html">workspace</a>,  
+    	<a href="tobject.html">tobject</a> 
+  <h3>subtypes</h3> 
+    	<p>none</p>
+  <h3>fields</h3> 
+  <table>
+  	<tbody>
+  		<tr>
+  			<th>name</th>
+  			<th>type</th>
+  			<th>description</th>
+  		</tr>
+      		<tr>
+      			<td>datafile</td>
+      			<td>
+      				<a >java.lang.String</a>
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td>id</td>
+      			<td>
+      				<a href="identifier.html">identifier</a>
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td><i>propScheme</i></td>
+      			<td>
+      				<a href="propositionalizationScheme.html">propositionalizationScheme</a>
+      			</td>
+      			<td>Scheme used to create propositional context from datatable (default is standard propositionalization scheme with all default propositionalization rules).</td>
+      		</tr> 
+      		<tr>
+      			<td><i>values</i></td>
+      			<td>
+      				<a >java.util.HashMap</a>(<a href="identifier.html">identifier</a>,<a >java.lang.String</a>)
+      			</td>
+      			<td>Additional values that are stored in the workspace.</td>
+      		</tr> 
+  	</tbody>
+  </table>
+
+</body>
+</html>

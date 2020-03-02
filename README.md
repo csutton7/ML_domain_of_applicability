@@ -2,17 +2,15 @@
 These files allow for an analysis of the domain of applicability (DA) to be performed once some ML model predictions have been generated.
 Both the model predictions and the descriptive language required to perform the DA analysis are contained in the data.csv file. 
 
-The main script is make_run_print.py, which calls two main scripts: re_split_common.py and calculate_outputs.py. 
+The main script is make_run_print.py, which calls two additional scripts: re_split_common.py and calculate_outputs.py. 
 
-In make_run_print, the global variables that are used in these scripts are set using the class _GLOB. 
+The DA analysis is performed by partitioning the data.csv file into six non-overlapping folds using scripts contained in re_split_common.py. The output of re_split_common.py is a sixe xarf files, which is used to run sgd using a wrapper to the java source code (and the parameters sets in the neg_mean_shift_abs_norm_error.json file).
 
-For example, the DA analysis is performed by partitioning the data.csv file into six non-overlapping folds using scripts contained in re_split_common.py. The number of splits is hard coded in this file with n_splits = 6.
+The output of SGD is a json file that is analyzed using calculate_outputs.py. 
 
-The output of re_split_common.py. is to produce a xarf file (the formatted file that can be used to run subgroup discovery). 
+Several global variables that set using the class _GLOB to reproduce the numbers from the manuscript.  For example,  the number of splits is hard coded in this file with n_splits = 6.
 
-This file can then be ran with sgd using a wrapper to the java source code. 
 
-The output of this is a json file that must be analyzed, which is done 
 
 
 

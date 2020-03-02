@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>KDON documentation - realKD 0.7.2</title>
+<style>
+body {
+	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 14px;
+	width: 90%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    vertical-align: top;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+caption { 
+	padding-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 7px;
+    display: inline-block;
+ 
+    float: left;
+    background-color: #F8981D;
+	color: #253441;
+    font-weight: bold;
+    height: 14px;
+    float: left;
+}
+</style>
+</head>
+
+<body>
+  <h1>KDON documentation - realKD 0.7.2</h1>
+  <h2>productWorkScheme</h2>
+  <p>Specifies a sequence of jobs resulting from applying a set of computations to each of a sequence of workspaces.</p>
+  <h3>supertypes</h3> 
+    	<a href="tobject.html">tobject</a> 
+  <h3>subtypes</h3> 
+    	<p>none</p>
+  <h3>fields</h3> 
+  <table>
+  	<tbody>
+  		<tr>
+  			<th>name</th>
+  			<th>type</th>
+  			<th>description</th>
+  		</tr>
+      		<tr>
+      			<td><i>computationTimeLimit</i></td>
+      			<td>
+      				<a href="posInt.html">posInt</a>
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td><i>computations</i></td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="computation.html">computation</a>)
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td>id</td>
+      			<td>
+      				<a href="identifier.html">identifier</a>
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td><i>trackers</i></td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="tracker.html">tracker</a>)
+      			</td>
+      			<td></td>
+      		</tr> 
+      		<tr>
+      			<td>workspaces</td>
+      			<td>
+      				<a href="harray.html">harray</a>(<a href="workspace.html">workspace</a>)
+      			</td>
+      			<td>The sequences of workspaces on which to run all the specified jobs.</td>
+      		</tr> 
+  	</tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "type" : "productWorkScheme",
+  "id" : "sgd_model_diagnostics",
+  "workspaces" : [ {
+    "type" : "workspaceFromXarf",
+    "id" : "mbtr",
+    "datafile" : "xarf.txt"
+  }],
+  "computations" : [ {
+    "type" : "legacyComputation",
+    "id" : "norm_abs_error_cov_weight_1.0",
+    "algorithm" : "EXCEPTIONAL_SUBGROUP_BESTFIRST_BRANCHANDBOUND",
+    "parameters" : {
+      "targets" : "[norm_abs_error]",
+      "cov_weight" : "1.0",
+      "dev_measure" : "normalized_negative_mean_shift",
+      "attr_filter" : "[Ef, soap_predE, abs_error, sum_pred_Ef_and_abs_error, sum_Ef_and_normalized_error, norm_abs_error, norm_error, error, abs_error, sq_error, abs_sq_error, norm_abs_error_bystd, norm_sq_error_bystd]",
+      "num_results" : "1",
+      "max_depth" : "Optional[4]"
+    }
+  } ],
+  "computationTimeLimit" : 3600,
+  "dataPath" : "."
+}
+
+
