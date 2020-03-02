@@ -1,4 +1,7 @@
-# ML_domain_of_applicability
+## Code and Data Repository for
+# Identifying Domains of Applicability of Machine Learning Models for Materials Science
+by Christopher Sutton, Mario Boley, Luca M Ghiringhelli, Matthias Rupp, Jilles Vreeken, Matthias Scheffler
+
 These files allow for an analysis of the domain of applicability (DA) to be performed once some ML model predictions have been generated.
 Both the model predictions and the descriptive language required to perform the DA analysis are contained in the data.csv file. 
 
@@ -9,9 +12,4 @@ The DA analysis is performed by partitioning the data.csv file into six non-over
 The output of SGD is a json file that is analyzed using calculate_outputs.py. 
 
 Several global variables that set using the class _GLOB to reproduce the numbers from the manuscript.  For example,  the number of splits is hard coded in this file with n_splits = 6.
-
-
-
-
-
 
