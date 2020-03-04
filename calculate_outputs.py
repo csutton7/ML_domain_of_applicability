@@ -10,26 +10,20 @@ import re_split_common as rsc
 import glob_variables 
 
 exchange_value = glob_variables._GLOB().exchange_value
-print(exchange_value)
 
 def get_all_values(rep, target, target_label, skip=None):
-
 
     global_dict = {}
     da_dict = {}
     dirs = get_dirs_glob(rep)
     for d in dirs:
-        
         try: 
-
             tmp_selectors, values, relations = get_selectors_from_subfolder(d)
             selectors = [ rename(s) for s in tmp_selectors ]
-
         except UnboundLocalError:
             # throws an error if there are no sgd outputs in the subfolder
             continue
     
-
         idx = int(d.split("/")[-2].strip("split_"))
         if idx in skip:
             continue
@@ -38,7 +32,7 @@ def get_all_values(rep, target, target_label, skip=None):
             global_dict[idx] = get_global_summary(global_df, rep, target, target_label, selectors, values, relations)
             da_dict[idx] = get_subset_summary(d, rep, target, target_label, selectors, values, relations)
 
-        print_summary(da_dict, global_dict)
+    print_summary(da_dict, global_dict)
 
 
 def calc_r2(values1, values2):
@@ -63,20 +57,6 @@ def partition_and_print(bigdf, target):
     print("avg. rr --> %s, cov = %s, vs. glob --> %s" %(np.mean(rr_df[target].values), len(rr_df)/float(len(bigdf)), np.mean(bigdf[target].values)))
  
     return rr_df, other_df
- 
-def get_effect_of_single_selector(df, s, v, r):
- 
-    df["is_reliable"] = [ 1 for i in range(0, len(df)) ]
- 
-    if r == "greaterOrEquals":
-        df["is_reliable"] = [ 1*df["is_reliable"].values[i] if df[s].values[i] >= v  else 0  for i in range(0, len(df)) ]
-    elif r == "greaterThan":
-        df["is_reliable"] = [ 1*df["is_reliable"].values[i] if df[s].values[i] > v  else 0  for i in range(0, len(df)) ]
-    elif r == "lessThan":
-        df["is_reliable"] = [ 1*df["is_reliable"].values[i] if df[s].values[i] < v else 0  for i in range(0, len(df)) ]
-    elif r == "lessOrEquals":
-        df["is_reliable"] = [ 1*df["is_reliable"].values[i] if df[s].values[i] <= v  else 0  for i in range(0, len(df)) ]
-    return df
  
 def selector2df(tmp_df, in_selectors, in_values, in_relations):
  
@@ -122,7 +102,6 @@ def get_global_summary(global_df, rep, target, target_label, selectors, values, 
                     "DA_rsquared": calc_r2(out_global_df[out_global_df["is_reliable"] == 1]["Ef"].values, out_global_df[out_global_df["is_reliable"] == 1][rep+"_predE"].values),
                     "DA_error": np.mean(out_global_df[out_global_df["is_reliable"] == 1][target_label].values),
                     "samples": deepcopy( out_global_df[target_label].values ),
-                    #"target_samples": deepcopy( out_global_df[target_label].values ),
                     "Ef": deepcopy( out_global_df["Ef"].values ) }
  
     return global_dict
@@ -156,12 +135,12 @@ def get_subset_summary(d, rep, target, target_label, selectors, values, relation
 def print_summary(final_rep_dict, final_global_dict):
     
     root_strg = "Global"
-    for l, p in zip(["MAE", "r^2", "l1", "l1_disp", "95per" ], ["error", "rsquared", "l1", "l1_disp", "95per"]):
+    for l, p in zip(["MAE", "r^2", "l1", "95per" ], ["error", "rsquared", "l1", "95per"]):
         tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
         print("%s: %s --> avg. = %s" %(root_strg, l, np.mean(tmp_list)))
 
     root_strg = "DA of Global"
-    for l, p in zip(["MAE","r^2", "l1", "l1_disp", "95per"], ["DA_error", "DA_rsquared", "l1", "l1_disp", "95per"]):
+    for l, p in zip(["MAE","r^2", "l1", "95per"], ["DA_error", "DA_rsquared", "l1", "95per"]):
         tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
         print("%s: %s --> avg. = %s" %(root_strg, l, np.mean(tmp_list)))
 
@@ -170,10 +149,9 @@ def print_summary(final_rep_dict, final_global_dict):
             root_strg = "DA identification:"
         elif t == "test":
             root_strg = "DA validation:"
-        for l, p in zip(["MAE", "l1", "l1_disp", "l2_disp", "95per"], ["error", "l1", "l1_disp", "95per"]):
+        for l, p in zip(["MAE", "l1", "95per", "cov"], ["error", "l1", "95per", "cov"]):
             tmp_list = [ final_rep_dict[i]["DA"+"_"+t][p] for i in final_rep_dict.keys() ]
             print("%s: %s --> avg. (std) DA = %s (%s) " %(root_strg, l, np.mean(tmp_list), np.std(tmp_list)))
-
 
 def rename(in_key):
     rename_dict = {'ecn_bond_dist_Al_O': 'ecn_bond_dist_Al-O',

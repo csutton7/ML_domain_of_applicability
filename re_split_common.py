@@ -49,12 +49,8 @@ def get_df(model):
     test_infile = os.path.join(root_path_dir,'data.csv')
     df = pd.read_csv(test_infile)
     label = model+end_label
-
     keep_cols = [ i for i in df.columns.tolist() if end_label not in i and i != "Ef" ] 
-    
     df = calc_sum_predE_abs_error(df, label)
-
-    #keep_cols = get_keep_ids()
     keep_cols.extend( ["Ef", label, "abs_error", "error", "sq_error", "norm_abs_error", "sum_Ef_and_normalized_error", "sum_pred_Ef_and_abs_error"] )
     final_df = df[keep_cols]
 
@@ -86,7 +82,6 @@ def write_xarf_file(write_df, target, write_name, write_dir="."):
         lines = f.readlines()
     
     content = [ line.strip() for line in lines ] 
-
     feature_list.extend(content)
     outFile3=os.path.join(write_dir, write_name)
 
