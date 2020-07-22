@@ -1,4 +1,4 @@
-import os
+import sys, os
 import json
 import numpy as np
 import math
@@ -13,9 +13,11 @@ exchange_value = glob_variables._GLOB().exchange_value
 
 def get_all_values(rep, target, target_label, skip=None):
 
+    
     global_dict = {}
     da_dict = {}
     dirs = get_dirs_glob(rep)
+
     for d in dirs:
         try: 
             tmp_selectors, values, relations = get_selectors_from_subfolder(d)
@@ -24,10 +26,12 @@ def get_all_values(rep, target, target_label, skip=None):
             # throws an error if there are no sgd outputs in the subfolder
             continue
     
+        print(d, skip)
         idx = int(d.split("/")[-2].strip("split_"))
         if idx in skip:
             continue
         else:
+            print(rep, idx)
             global_df = rsc.get_df(rep)
             global_dict[idx] = get_global_summary(global_df, rep, target, target_label, selectors, values, relations)
             da_dict[idx] = get_subset_summary(d, rep, target, target_label, selectors, values, relations)
@@ -54,7 +58,7 @@ def calc_l1(values1, values2):
 def partition_and_print(bigdf, target):
     rr_df = bigdf[bigdf["is_reliable"] == 1]
     other_df = bigdf[bigdf["is_reliable"] == 0]
-    print("avg. rr --> %s, cov = %s, vs. glob --> %s" %(np.mean(rr_df[target].values), len(rr_df)/float(len(bigdf)), np.mean(bigdf[target].values)))
+    print("avg. rr --> %s, cov = %s, vs. glob --> %s" %(round(np.mean(rr_df[target].values), 3), len(rr_df)/float(len(bigdf)), round(np.mean(bigdf[target].values), 3)))
  
     return rr_df, other_df
  
@@ -90,6 +94,7 @@ def get_global_summary(global_df, rep, target, target_label, selectors, values, 
     
     for s, v, r in zip(selectors, values, relations):
         print(s, v, r)
+    print("")
     
     out_global_df = selector2df(deepcopy(global_df), selectors, values, relations)
     
@@ -135,14 +140,14 @@ def get_subset_summary(d, rep, target, target_label, selectors, values, relation
 def print_summary(final_rep_dict, final_global_dict):
     
     root_strg = "Global"
-    for l, p in zip(["MAE", "r^2", "l1", "95per" ], ["error", "rsquared", "l1", "95per"]):
+    for l, p in zip(["MAE", "l1", "95per" ], ["error", "l1", "95per"]):
         tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
-        print("%s: %s --> avg. = %s" %(root_strg, l, np.mean(tmp_list)))
+        print("%s: %s --> avg. = %s" %(root_strg, l, round(np.mean(tmp_list), 3)))
 
     root_strg = "DA of Global"
-    for l, p in zip(["MAE","r^2", "l1", "95per"], ["DA_error", "DA_rsquared", "l1", "95per"]):
-        tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
-        print("%s: %s --> avg. = %s" %(root_strg, l, np.mean(tmp_list)))
+    # for l, p in zip(["MAE","r^2", "l1", "95per"], ["DA_error", "DA_rsquared", "l1", "95per"]):
+    #     tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
+    #     print("%s: %s --> avg. = %s" %(root_strg, l, round(np.mean(tmp_list), 3)))
 
     for t in ["train", "test"]:
         if t == "train":
@@ -151,7 +156,7 @@ def print_summary(final_rep_dict, final_global_dict):
             root_strg = "DA validation:"
         for l, p in zip(["MAE", "l1", "95per", "cov"], ["error", "l1", "95per", "cov"]):
             tmp_list = [ final_rep_dict[i]["DA"+"_"+t][p] for i in final_rep_dict.keys() ]
-            print("%s: %s --> avg. (std) DA = %s (%s) " %(root_strg, l, np.mean(tmp_list), np.std(tmp_list)))
+            print("%s: %s --> avg. (std) DA = %s (%s) " %(root_strg, l, round(np.mean(tmp_list), 3), round(np.std(tmp_list), 3)))
 
 def rename(in_key):
     rename_dict = {'ecn_bond_dist_Al_O': 'ecn_bond_dist_Al-O',

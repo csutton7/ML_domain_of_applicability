@@ -46,6 +46,7 @@ def split_total_df_and_write(target, model, n_splits, final_df, random_state):
 
 def get_df(model):
     end_label = "_predE"
+    # test_infile = os.path.join(root_path_dir,'tmp_data.csv')
     test_infile = os.path.join(root_path_dir,'data.csv')
     df = pd.read_csv(test_infile)
     label = model+end_label
