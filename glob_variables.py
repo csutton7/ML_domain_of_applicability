@@ -6,7 +6,7 @@ class _GLOB:
     random_state_dict = {"mbtr": 4, "soap": 4, "ngram": 14, "atomic":2}
     random_state = None
     
-    skip_dict = {"mbtr": {"norm_abs_error":[4, 6]},
+    skip_dict = {"mbtr": {"norm_abs_error":[1, 4]},
                 "soap": {"norm_abs_error":[5, 1]},
                 "ngram":{"norm_abs_error":[4]},
                 "atomic": {"norm_abs_error":[1, 6]}}
