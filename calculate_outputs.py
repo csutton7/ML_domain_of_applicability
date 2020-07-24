@@ -6,38 +6,35 @@ import glob
 import numpy as np
 import pandas as pd
 from copy import deepcopy
+from copy import copy
 import re_split_common as rsc
 import glob_variables 
 
-exchange_value = glob_variables._GLOB().exchange_value
+scale_value = glob_variables._GLOB().scale_value
+filter_value = glob_variables._GLOB().filter_value
 
 def get_all_values(rep, target, target_label, skip=None):
-
     
     global_dict = {}
     da_dict = {}
     dirs = get_dirs_glob(rep)
-
-    for d in dirs:
-        try: 
-            tmp_selectors, values, relations = get_selectors_from_subfolder(d)
-            selectors = [ rename(s) for s in tmp_selectors ]
-        except UnboundLocalError:
-            # throws an error if there are no sgd outputs in the subfolder
-            continue
-    
-        print(d, skip)
+    for nd, d in enumerate(dirs):
         idx = int(d.split("/")[-2].strip("split_"))
+        global_df = get_test_df(d)
+        global_dict[idx] = get_values_for_all_tests(rep, target_label, global_df)
         if idx in skip:
             continue
         else:
-            print(rep, idx)
-            global_df = rsc.get_df(rep)
-            global_dict[idx] = get_global_summary(global_df, rep, target, target_label, selectors, values, relations)
+            tmp_selectors, values, relations = get_selectors_from_subfolder(d)
+            selectors = [ rename(s) for s in tmp_selectors ]
             da_dict[idx] = get_subset_summary(d, rep, target, target_label, selectors, values, relations)
 
-    print_summary(da_dict, global_dict)
+    if nd+1 != len(dirs):
+        print("Not all files were collected from the relevant subfolders")
 
+    print_summary_complete(da_dict, global_dict)
+
+    return da_dict, global_dict
 
 def calc_r2(values1, values2):
  
@@ -54,13 +51,6 @@ def calc_l1(values1, values2):
     var = [ abs(values1[i] - median_e) for i in range(len(values1)) ]
      
     return 1-np.sum(sum_of_abs_error)/np.sum(var)
-
-def partition_and_print(bigdf, target):
-    rr_df = bigdf[bigdf["is_reliable"] == 1]
-    other_df = bigdf[bigdf["is_reliable"] == 0]
-    print("avg. rr --> %s, cov = %s, vs. glob --> %s" %(round(np.mean(rr_df[target].values), 3), len(rr_df)/float(len(bigdf)), round(np.mean(bigdf[target].values), 3)))
- 
-    return rr_df, other_df
  
 def selector2df(tmp_df, in_selectors, in_values, in_relations):
  
@@ -82,32 +72,67 @@ def get_dirs_glob(rep):
     
     return subfolders
 
-def get_global_summary(global_df, rep, target, target_label, selectors, values, relations):
-     
-    global_df[target] = global_df[target].values
+def calc_l1_dispersion(invalues):
     
-    if target != target_label:
-        global_df[target_label] = exchange_value*global_df[target_label].values
-     
-    global_df[rep+"_predE"] = exchange_value*global_df[rep+"_predE"].values
-    global_df["Ef"] = exchange_value*global_df["Ef"].values    
+    return np.mean([ abs(invalues - np.median(invalues)) for i in range(len(invalues)) ])
+
+
+def calc_l2_dispersion(invalues):
+    
+    return math.sqrt(np.mean([ (invalues[i] - np.mean(invalues))**2 for i in range(len(invalues)) ]))
+
+def get_values_for_all_tests(rep, target_label, tmp_df):
+   
+    all_values = {"all_targets":[], "all_evals": [], "all_preds": [], "all_ids": []}
+
+    all_values["all_ids"].extend( tmp_df["id"].tolist() )
+    all_values["all_preds"].extend( [scale_value*tmp_e for tmp_e in tmp_df[rep+"_predE"].values] )
+    all_values["all_evals"].extend( [scale_value*tmp_e for tmp_e in tmp_df["Ef"].values] )
+    all_values["all_targets"].extend( [scale_value*tmp_e for tmp_e in tmp_df[target_label].values] )
+
+    assert len(all_values["all_preds"]) == len(all_values["all_targets"]) and len(all_values["all_evals"]) == len(all_values["all_targets"])
+    print(len(all_values["all_preds"]), len(all_values["all_targets"]),len(all_values["all_evals"]))
+    all_files_dict = { "error": np.mean(all_values["all_targets"]), 
+                        "l1": calc_l1(all_values["all_evals"], all_values["all_preds"]),
+                        "l1_disp": calc_l1_dispersion(all_values["all_evals"]),
+                        "l2_disp": calc_l2_dispersion(all_values["all_evals"]),
+                        "rsquared": calc_r2(all_values["all_evals"], all_values["all_preds"]),
+                        "95per" : np.percentile(all_values["all_targets"], 95),
+                        "all_errors": copy( all_values["all_targets"] ),
+                        "all_evals": copy( all_values["all_evals"] ) }  
+                        # "predE_samples": copy( all_values["all_targets"] ),
+                        # "e_samples": copy( all_values["all_evals"] ) }  
+
+    return all_files_dict
+
+def get_test_df(d):
+    return pd.read_csv(os.path.join(d, "test.csv"))
+
+def get_global_summary(global_df, rep, target, target_label, selectors, values, relations):
     
     for s, v, r in zip(selectors, values, relations):
         print(s, v, r)
     print("")
     
     out_global_df = selector2df(deepcopy(global_df), selectors, values, relations)
+ 
+    DA_targets = copy(scale_value*out_global_df[out_global_df["is_reliable"] == 1][target_label].values)
+    DA_evals = copy(scale_value*out_global_df[out_global_df["is_reliable"] == 1]["Ef"].values)
+    DA_preds = copy(scale_value*out_global_df[out_global_df["is_reliable"] == 1][rep+"_predE"].values)
+    all_targets = copy(scale_value*out_global_df[target_label].values)
+    all_preds = copy(scale_value*out_global_df[rep+"_predE"].values)
+    all_evals = copy(scale_value*out_global_df["Ef"].values)
     
-    global_dict = { "error": np.mean(out_global_df[target_label].values), 
-                    "l1": calc_l1(out_global_df["Ef"].values, out_global_df[rep+"_predE"].values),
-                    "l1_disp": np.mean([ abs(out_global_df["Ef"].values[i] - np.median(out_global_df["Ef"].values)) for i in range(len(out_global_df["Ef"].values)) ]),
-                    "l2_disp": math.sqrt(np.mean([ (out_global_df["Ef"].values[i] - np.mean(out_global_df["Ef"].values))**2 for i in range(len(out_global_df["Ef"].values)) ])),
-                    "rsquared": calc_r2(out_global_df["Ef"].values, out_global_df[rep+"_predE"].values),
-                    "95per" : np.percentile(out_global_df[target_label].values, 95),
-                    "DA_rsquared": calc_r2(out_global_df[out_global_df["is_reliable"] == 1]["Ef"].values, out_global_df[out_global_df["is_reliable"] == 1][rep+"_predE"].values),
-                    "DA_error": np.mean(out_global_df[out_global_df["is_reliable"] == 1][target_label].values),
-                    "samples": deepcopy( out_global_df[target_label].values ),
-                    "Ef": deepcopy( out_global_df["Ef"].values ) }
+    global_dict = { "error": np.mean(all_targets), 
+                    "l1": calc_l1(all_evals, all_preds),
+                    "l1_disp": calc_l1_dispersion(all_evals),
+                    "l2_disp": calc_l2_dispersion(all_evals),
+                    "rsquared": calc_r2(all_evals, all_preds),
+                    "95per" : np.percentile(all_targets, 95),
+                    "DA_rsquared": calc_r2(DA_evals, DA_preds),
+                    "DA_error": np.mean(DA_targets),
+                    "all_errors": copy( all_targets),
+                    "all_evals": copy( all_evals ) }
  
     return global_dict
 
@@ -117,47 +142,87 @@ def get_subset_summary(d, rep, target, target_label, selectors, values, relation
     for t in ["test", "train"]:
         in_df = pd.read_csv(os.path.join(d, t+".csv"))
         out_df = selector2df(deepcopy(in_df), selectors, values, relations)
-        pred_e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1][rep+"_predE"].values)
-        e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1]["Ef"].values)
-        target_e_value = deepcopy(exchange_value*out_df[out_df["is_reliable"] == 1][target_label].values)
-        all_target_e_value = deepcopy(exchange_value*out_df[target_label].values)
+        nsamples = len(out_df[target_label].values)
+        DA_preds = copy(scale_value*out_df[out_df["is_reliable"] == 1][rep+"_predE"].values)
+        DA_evals = copy(scale_value*out_df[out_df["is_reliable"] == 1]["Ef"].values)
+        DA_targets = copy(scale_value*out_df[out_df["is_reliable"] == 1][target_label].values)
+        all_targets = copy(scale_value*out_df[target_label].values)
+        all_evals = copy(scale_value*out_df["Ef"].values)
 
-        #print("for model %s split %s, avg. rr vs. glob error --> %s vs. %s" %(rep, split, target, t, np.mean(df[target].values), np.mean(df[df["is_reliable"] == 1][target].values)))
-        tmp_dict["DA"+"_"+t] = {"error": np.mean(target_e_value), 
-                                "cov": len(out_df[out_df["is_reliable"] == 1])/float(len(out_df)),
-                                "l1": calc_l1(e_value, pred_e_value),
-                                "l1_disp": np.mean([ abs(e_value[i] - np.median(e_value)) for i in range(len(e_value)) ]),
-                                "l2_disp": math.sqrt(np.mean([ (e_value[i] - np.mean(e_value))**2 for i in range(len(e_value)) ])),
-                                "rsquared": calc_r2(e_value, pred_e_value),
-                                "95per" : np.percentile(target_e_value, 95),
-                                "samples": deepcopy(target_e_value), #abs(e_value - pred_e_value),
-                                "all_error": np.mean(all_target_e_value),
-                                "ids": deepcopy(out_df[out_df["is_reliable"] == 1]["id"].values),
+        tmp_dict["DA"+"_"+t] = {"DA_error": np.mean(DA_targets), 
+                                "DA_cov": float(len(DA_targets))/float(nsamples),
+                                "DA_l1": calc_l1(DA_evals, DA_preds),
+                                "DA_l1_disp": calc_l1_dispersion(DA_evals),
+                                "DA_l2_disp": calc_l2_dispersion(DA_evals),
+                                "DA_rsquared": calc_r2(DA_evals, DA_preds),
+                                "DA_95per" : np.percentile(DA_targets, 95),
+                                "DA_errors": copy(DA_targets),
+                                "DA_evals": copy(DA_evals),
+                                "DA_ids": copy(out_df[out_df["is_reliable"] == 1]["id"].values),
+                                "all_evals": copy(all_evals),
+                                "all_errors": copy(all_targets),
+                                "global_error": np.mean(all_targets),
                                 }
+        
+        """
+        if t == "test":
+            print_df = deepcopy(out_df)
+            print_df[target_label] = copy(scale_value*print_df[target_label].values)
+            print_summary_per_split(print_df, target_label, rep)
+        """
+
     return tmp_dict
 
+def print_summary_per_split(df, target, model):
 
-def print_summary(final_rep_dict, final_global_dict):
+    print('\n--------------Evaluating SGD on %s for the target %s ---------------' %(model, target))
+    print('%i/%i (%.2f) in the reliable region...\nreliable-->MAE = %.3f\nunreliable-->MAE = %.3f \nglobal-->MAE = %.3f' % 
+          (df.is_reliable.sum(), len(df), df.is_reliable.mean(), 
+           df[target].get((df.is_reliable == 1)).mean(),
+           df[target].get((df.is_reliable == 0)).mean(),
+           df[target].mean()))
     
+    print('Number of points below %s in the rr (global) %s (%s) with an avg. error %s' % 
+           (round(filter_value, 2),
+           len(df[target].get((df.is_reliable == 1) & (df[target] <= filter_value )))/float(len(df[target].get((df.is_reliable == 1)))),
+           len(df[target].get(df[target] <= filter_value))/float(len(df[target])),
+           df[target].get((df.is_reliable == 1) & (df[target] <= filter_value )).mean()))
+    
+    rr_95per = np.percentile(df[target].get(df.is_reliable == 1).tolist(), 95)
+    global_95per = np.percentile(df[target].tolist(), 95)
+    print('95per. distribution reliable %s ' %rr_95per)
+    print('95per. distribution global %s ' %global_95per) 
+    tmp_frac = rr_95per/global_95per
+    print('relative reductions: %s' %(tmp_frac))
+    
+    return (df[target].get((df.is_reliable == 1)).mean(), 
+            df[target].mean(), df.is_reliable.sum()/float(len(df)), 
+            len(df[target].get((df.is_reliable == 1) & (df[target] <= filter_value )))/float(len(df[target].get((df.is_reliable == 1)))),
+            len(df[target].get(df[target] <= filter_value))/float(len(df[target])),
+            rr_95per,
+            global_95per)
+
+def print_global(in_global_dict):
     root_strg = "Global"
     for l, p in zip(["MAE", "l1", "95per" ], ["error", "l1", "95per"]):
-        tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
+        tmp_list = [ in_global_dict[i][p] for i in in_global_dict.keys() ]
         print("%s: %s --> avg. = %s" %(root_strg, l, round(np.mean(tmp_list), 3)))
-
-    root_strg = "DA of Global"
-    # for l, p in zip(["MAE","r^2", "l1", "95per"], ["DA_error", "DA_rsquared", "l1", "95per"]):
-    #     tmp_list = [ final_global_dict[i][p] for i in final_global_dict.keys() ]
-    #     print("%s: %s --> avg. = %s" %(root_strg, l, round(np.mean(tmp_list), 3)))
-
+    
+def print_DA(in_DA_dict):
     for t in ["train", "test"]:
         if t == "train":
             root_strg = "DA identification:"
         elif t == "test":
             root_strg = "DA validation:"
-        for l, p in zip(["MAE", "l1", "95per", "cov"], ["error", "l1", "95per", "cov"]):
-            tmp_list = [ final_rep_dict[i]["DA"+"_"+t][p] for i in final_rep_dict.keys() ]
+        for l, p in zip(["MAE", "l1", "95per", "cov"], ["DA_error", "DA_l1", "DA_95per", "DA_cov"]):
+            tmp_list = [ in_DA_dict[i]["DA"+"_"+t][p] for i in in_DA_dict.keys() ]
             print("%s: %s --> avg. (std) DA = %s (%s) " %(root_strg, l, round(np.mean(tmp_list), 3), round(np.std(tmp_list), 3)))
-
+    
+def print_summary_complete(final_rep_dict, final_global_dict):
+    
+    print_global(final_global_dict)
+    print_DA(final_rep_dict)
+    
 def rename(in_key):
     rename_dict = {'ecn_bond_dist_Al_O': 'ecn_bond_dist_Al-O',
                     'ecn_bond_dist_Ga_O': 'ecn_bond_dist_Ga-O',
